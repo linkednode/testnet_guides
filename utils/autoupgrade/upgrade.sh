@@ -124,7 +124,7 @@ for((;;)); do
     if $proposal_status_checked || [[ $status == "" ]]; then
       # Если статус предложения "Passed" или нет ответа от API, выполняем обновление
     sudo mv $NEW_BIN_PATH $OLD_BIN_PATH
-    sudo systemctl restart ${BINARY}-test
+    sudo systemctl restart ${BINARY}
     printLine
     echo -e "$GREEN Your node has been updated and restarted, the session will be terminated automatically after 15 min${NC}"
     MESSAGE="$BINARY updated to ${VER} and service restarted"
