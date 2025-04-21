@@ -142,7 +142,7 @@ for((;;)); do
   fi
   # Send notification based on remaining blocks
   if ((remaining_blocks == 1000 || remaining_blocks == 500 || remaining_blocks == 100 || remaining_blocks == 50 || remaining_blocks == 10)); then
-    MESSAGE="Update height ${UPD_HEIGHT} | Remaining blocks ${remaining_blocks} | Remaining time ${readable_remaining_time}"
+    MESSAGE="Binary ${BINARY} | Chain-id ${CHAIN_ID} | Update height ${UPD_HEIGHT} | Remaining blocks ${remaining_blocks} | Remaining time ${readable_remaining_time}"
     send_telegram "$MESSAGE"
   fi
 
