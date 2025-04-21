@@ -132,6 +132,21 @@ for((;;)); do
     echo "$(date): Your node successfully upgraded to ${VER}" >> $PROJECT_HOME/upgrade.log
     printLine
     break
+  elif ((remaining_blocks==1000)); then
+    MESSAGE="Update height ${UPD_HEIGHT} | Remaining block ${remaining_blocks} | Remaining time ${readable_remaining_time}"
+    send_telegram "$MESSAGE"
+  elif ((remaining_blocks==500)); then
+    MESSAGE="Update height ${UPD_HEIGHT} | Remaining block ${remaining_blocks} | Remaining time ${readable_remaining_time}"
+    send_telegram "$MESSAGE"
+  elif ((remaining_blocks==100)); then
+    MESSAGE="Update height ${UPD_HEIGHT} | Remaining block ${remaining_blocks} | Remaining time ${readable_remaining_time}"
+    send_telegram "$MESSAGE"
+  elif ((remaining_blocks==50)); then
+    MESSAGE="Update height ${UPD_HEIGHT} | Remaining block ${remaining_blocks} | Remaining time ${readable_remaining_time}"
+    send_telegram "$MESSAGE"
+  elif ((remaining_blocks==10)); then
+    MESSAGE="Update height ${UPD_HEIGHT} | Remaining block ${remaining_blocks} | Remaining time ${readable_remaining_time}"
+    send_telegram "$MESSAGE"
   else
     # Во всех остальных случаях отменяем обновление и выходим из скрипта
     echo -e "$RED Update cancelled due to proposal status: $status, the session will be terminated automatically after 15 min${NC}"
