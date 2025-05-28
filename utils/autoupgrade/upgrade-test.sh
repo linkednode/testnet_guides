@@ -120,7 +120,7 @@ for((;;)); do
   echo -e Upgr Height: ${BLUE}$UPD_HEIGHT${NC}
   echo -e "Estimated Time: ${BLUE}${readable_remaining_time}${NC} | Remaining Blocks: ${BLUE}${remaining_blocks}${NC} | Average Time per Block: ${BLUE}${avg_time}s${NC}"
 
-  if ((height==$UPD_HEIGHT)); then
+  if ((height>=$UPD_HEIGHT)); then
     if $proposal_status_checked || [[ $status == "" ]]; then
       # Если статус предложения "Passed" или нет ответа от API, выполняем обновление
     sudo mv $NEW_BIN_PATH $OLD_BIN_PATH
